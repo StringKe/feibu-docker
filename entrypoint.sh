@@ -11,25 +11,25 @@ set -e
 ### 
 
 # 检测使用 pnpm yarn 还是 npm
-function detect_package_manager(){
-  pm=("pnpm" "yarn" "npm")
-  for i in ${pm[@]}
-  do
-    if type $i >/dev/null 2>&1; then
-      echo $i
-      return
-    fi
-  done
-}
+# function detect_package_manager(){
+#   pm=("pnpm" "yarn" "npm")
+#   for i in ${pm[@]}
+#   do
+#     if type $i >/dev/null 2>&1; then
+#       echo $i
+#       return
+#     fi
+#   done
+# }
 
-PM=$(detect_package_manager)
+# PM=$(detect_package_manager)
 
 
-echo "Staring node server..."
-echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
-cd /app/custom-ts 
-$PM install
-$PM run watch &
+# echo "Staring node server..."
+# echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
+# cd /app/custom-ts 
+# $PM install
+# $PM run watch &
 
 while ! echo -e '\x1dclose' | nc localhost 9992 > /dev/null 2>&1
 do
