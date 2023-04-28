@@ -31,11 +31,11 @@ echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
 # $PM install
 # $PM run watch &
 
-while ! echo -e '\x1dclose' | nc localhost 9992 > /dev/null 2>&1
-do
-  echo " node server is not ready yet. Retrying in 5 seconds..."
-  sleep 5
-done
+# while ! echo -e '\x1dclose' | nc localhost 9992 > /dev/null 2>&1
+# do
+#   echo " node server is not ready yet. Retrying in 5 seconds..."
+#   sleep 5
+# done
 echo "node server is ready. Starting fireboom server..."
 cd /app
 ./fireboom dev --host 0.0.0.0 &
