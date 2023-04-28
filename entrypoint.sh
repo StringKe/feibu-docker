@@ -25,8 +25,8 @@ set -e
 # PM=$(detect_package_manager)
 
 
-# echo "Staring node server..."
-# echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
+echo "Staring node server..."
+echo '127.0.0.1 localhost.localdomain localhost' > /etc/hosts
 # cd /app/custom-ts 
 # $PM install
 # $PM run watch &
